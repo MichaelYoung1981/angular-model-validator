@@ -1,0 +1,35 @@
+﻿<html>
+<body>
+    <div ng-app="angularModelValidator">
+        <div ng-controller="TestController as test">
+            <form name="ModelForm" validate-and-submit="test.submit()" model-to-validate="test.model" validation-error-summary="false">
+                <div>
+                    Name: <input type="text" ng-model="test.model.Name" />
+                </div>
+                <div>
+                    Date of Birth: <input type="text" ng-model="test.model.DateOfBirth" />
+                </div>
+                <div>
+                    Number of Children: <input type="text" ng-model="test.model.NumberOfChildren" />
+                </div>
+                <div>
+                    <input type="submit" value="Validate and Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/validate.js/validate.js"></script>
+    <script type="text/javascript" src="../bower_components/xdate/src/xdate.js"></script>
+
+    <script type="text/javascript" src="../src/App.js"></script>
+    <script type="text/javascript" src="../src/ModelValidator.js"></script>
+    <script type="text/javascript" src="../src/ValidateAndSubmitDirective.js"></script>
+
+    <script type="text/javascript" src="TestModel.js"></script>
+    <script type="text/javascript" src="TestController.js"></script>
+
+</body>
+</html>
