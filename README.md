@@ -15,3 +15,6 @@ bower install angular-model-validator
 ```
 git clone https://github.com/MichaelYoung1981/angular-model-validator.git
 ```
+
+## Usage
+Take a look at the demo folder to see a very basic example in action.
