@@ -3,6 +3,8 @@ angular-model-validator
 
 A simple directive to allow models to be validated on submission rather than relying on form validation.
 
+You can find more information, including the rationale for creating this directive, on my blog: [https://northerncodemonkey.wordpress.com](https://northerncodemonkey.wordpress.com)
+
 ## Installation
 
 Install via bower:
