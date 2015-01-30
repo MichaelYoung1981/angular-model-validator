@@ -1,6 +1,6 @@
 {
   "name": "angular-model-validator",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Directive allowing validation rules to be applied against the model rather than within the markup",
   "devDependencies": {
     "grunt": "^0.4.5",
