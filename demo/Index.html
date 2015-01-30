@@ -1,8 +1,15 @@
 ﻿<html>
+<head>
+    <style>
+        .validationErrors {
+            color: red;
+        }
+    </style>
+</head>
 <body>
     <div ng-app="angularModelValidator">
         <div ng-controller="TestController as test">
-            <form name="ModelForm" validate-and-submit="test.submit()" model-to-validate="test.model" validation-error-summary="false">
+            <form name="ModelForm" validate-and-submit="test.submit()" model-to-validate="test.model" validation-error-summary="false" validation-css-class="validationErrors">
                 <div>
                     Name: <input type="text" ng-model="test.model.Name" />
                 </div>

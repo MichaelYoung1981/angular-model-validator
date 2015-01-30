@@ -24,15 +24,15 @@
 
         function bindErrors(scope, element, attrs) {
             if (attrs["validationErrorSummary"] && attrs["validationErrorSummary"] !== "false") {
-                addErrorContainer(scope, element);
+                addErrorContainer(scope, element, attrs);
             }
             else {
                 addFieldErrors(scope, element, attrs);
             }
         }
 
-        function addErrorContainer(scope, element) {
-            var errorElement = angular.element("<ul ng-repeat='group in validatorController.errorMessages'><li ng-repeat='error in group'>{{error}}</li></ul>");
+        function addErrorContainer(scope, element, attrs) {
+            var errorElement = angular.element("<ul class='" + (attrs["validationCssClass"] || "") + "'><div ng-repeat='group in validatorController.errorMessages'><li ng-repeat='error in group'>{{error}}</li></div></ul>");
             var compiled = $compile(errorElement);
             element.prepend(errorElement);
             compiled(scope);
@@ -46,12 +46,12 @@
             var model = scope.model || scope;
             Object.keys(model).forEach(function (property) {
                 var matchingInput = element.find("[ng-model='" + modelName + property + "']");
-                addErrorMessage(matchingInput, property, scope);
+                addErrorMessage(matchingInput, property, scope, attrs);
             });
         }
 
-        function addErrorMessage(matchingInput, property, scope) {
-            var messageElement = angular.element("<div ng-repeat=\"error in validatorController.errorMessages['" + property + "']\">{{error}}</div>");
+        function addErrorMessage(matchingInput, property, scope, attrs) {
+            var messageElement = angular.element("<div ng-repeat=\"error in validatorController.errorMessages['" + property + "']\" class='" + (attrs["validationCssClass"] || "") + "'>{{error}}</div>");
             var compiled = $compile(messageElement);
             matchingInput.after(messageElement);
             compiled(scope);
